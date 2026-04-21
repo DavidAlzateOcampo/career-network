@@ -1,0 +1,99 @@
+graph TB
+    subgraph "USER JOURNEY THROUGH CAREER NETWORK"
+        START["🚀 START<br/>User arrives with need"]
+        
+        P1["📍 PHASE 1: DISCOVERY<br/>User: 'I'm unsure about direction'<br/><br/>Action: Consult @career-futurist<br/>Output: Blue Ocean opportunities"]
+        
+        P2["📍 PHASE 2: ANALYSIS<br/>User: 'I have target roles'<br/><br/>Action: Consult @career-strategist<br/>Output: Gap analysis & prioritization"]
+        
+        P3["📍 PHASE 3: BUILDING<br/>User: 'Ready to develop skills'<br/><br/>Action: Consult @learning-architect<br/>Output: 14-day sprint curriculum"]
+        
+        P3B["⚡ CONCURRENT: PRESSURE TESTING<br/>User: 'I want to test my skills'<br/><br/>Action: Consult @tech-drill-sergeant<br/>Output: Timed challenges & feedback"]
+        
+        P4["💪 PHASE 4: SUPPORT<br/>User: 'I'm struggling/doubting'<br/><br/>Action: Consult @psych-advisor<br/>Output: Cognitive reframes & resilience"]
+        
+        P5["📍 PHASE 5: POSITIONING<br/>User: 'Ready to apply'<br/><br/>Action: Consult @cv-specialist<br/>Output: Optimized resume for roles"]
+        
+        P6["📍 PHASE 6: INTERVIEWING<br/>User: 'Preparing for interviews'<br/><br/>Action: Consult @case-simulator<br/>Output: System design practice"]
+        
+        END["🎯 GOAL<br/>Land senior role in<br/>emerging industry"]
+    end
+    
+    subgraph "ORCHESTRATOR ACTIVITIES"
+        A1["Listen to user input"]
+        A2["Identify needed agent"]
+        A3["Delegate to specialist"]
+        A4["Synthesize insights<br/>2-3 key bullets"]
+        A5["Save to CAREER_LOG.md"]
+        A6["Guide next steps"]
+        A7["Reference past work"]
+    end
+    
+    subgraph "TOKEN MANAGEMENT"
+        T1["✓ Summarize outputs<br/>500 words → 3 bullets"]
+        T2["✓ Store findings<br/>in CAREER_LOG.md"]
+        T3["✓ Keep conversation lean"]
+        T4["✓ Compact long sessions"]
+        T5["✓ Selective log reading"]
+    end
+    
+    subgraph "PERSISTENCE"
+        LOG["📋 CAREER_LOG.md<br/><br/>Tracks across sessions:<br/>• Strategic opportunities<br/>• Gap analysis<br/>• Learning progress<br/>• Interview feedback<br/>• Resume versions<br/>• Confidence trends<br/>• Next actions"]
+    end
+    
+    START --> P1
+    P1 --> P2
+    P2 --> P3
+    P3 --> P3B
+    P3 --> P4
+    P3B --> P4
+    P4 -->|loops back| P3
+    P4 -->|loops back| P3B
+    P3 --> P5
+    P5 --> P6
+    P6 --> END
+    
+    P1 -.->|Orchestrator<br/>manages| A1
+    P2 -.->|Orchestrator<br/>manages| A2
+    P3 -.->|Orchestrator<br/>manages| A3
+    P3B -.->|Orchestrator<br/>manages| A3
+    P4 -.->|Orchestrator<br/>manages| A4
+    P5 -.->|Orchestrator<br/>manages| A5
+    P6 -.->|Orchestrator<br/>manages| A6
+    
+    A1 --> T1
+    A2 --> T2
+    A3 --> T3
+    A4 --> T4
+    A5 --> T5
+    A6 --> T1
+    
+    LOG -.->|Provides<br/>context| A7
+    A1 -.->|Reads when<br/>needed| LOG
+    A5 -.->|Writes<br/>findings| LOG
+    
+    style START fill:#e1f5ff,stroke:#0277bd,stroke-width:3px
+    style P1 fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style P2 fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style P3 fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style P3B fill:#ffe0b2,stroke:#f57c00,stroke-width:2px
+    style P4 fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
+    style P5 fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style P6 fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style END fill:#4caf50,stroke:#1b5e20,stroke-width:3px,color:#fff
+    
+    style A1 fill:#fff3e0
+    style A2 fill:#fff3e0
+    style A3 fill:#fff3e0
+    style A4 fill:#fff3e0
+    style A5 fill:#fff3e0
+    style A6 fill:#fff3e0
+    style A7 fill:#fff3e0
+    
+    style T1 fill:#e0f2f1
+    style T2 fill:#e0f2f1
+    style T3 fill:#e0f2f1
+    style T4 fill:#e0f2f1
+    style T5 fill:#e0f2f1
+    
+    style LOG fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px

@@ -1,0 +1,57 @@
+graph TD
+    ROOT["~/.gemini/extensions/"]
+    
+    CN["career-network/"]
+    
+    GEMINI["📄 GEMINI.md<br/>Orchestrator Hub<br/><br/>• Central coordinator<br/>• Delegates to agents<br/>• Manages context<br/>• Prevents token bloat<br/>• Reads/writes CAREER_LOG"]
+    
+    LOG["📋 CAREER_LOG.md<br/>Persistent Storage<br/><br/>• Strategic direction<br/>• Gap analysis<br/>• Learning progress<br/>• Interview feedback<br/>• Resume versions<br/>• Resilience notes<br/>• Next actions"]
+    
+    AGENTS["📁 agents/"]
+    
+    G7["@career-futurist.md<br/>Blue Ocean Discovery<br/>Emerging industries<br/>Market validation"]
+    
+    G1["@career-strategist.md<br/>Gap Analysis<br/>Technical blockers<br/>Role ranking"]
+    
+    G3["@learning-architect.md<br/>Skill Building<br/>14-day sprints<br/>Problem sets"]
+    
+    G4["@tech-drill-sergeant.md<br/>Pressure Testing<br/>Timed challenges<br/>Failure diagnosis"]
+    
+    G2["@psych-advisor.md<br/>Resilience Support<br/>Cognitive reframes<br/>Momentum management"]
+    
+    G5["@cv-specialist.md<br/>Resume Optimization<br/>ATS keywords<br/>Role-specific versions"]
+    
+    G6["@case-simulator.md<br/>Interview Prep<br/>System design cases<br/>Architecture challenges"]
+    
+    ROOT --> CN
+    
+    CN --> GEMINI
+    CN --> LOG
+    CN --> AGENTS
+    
+    AGENTS --> G7
+    AGENTS --> G1
+    AGENTS --> G3
+    AGENTS --> G4
+    AGENTS --> G2
+    AGENTS --> G5
+    AGENTS --> G6
+    
+    GEMINI -->|"delegates to<br/>@agent-name"| AGENTS
+    AGENTS -->|"responds with<br/>specialized analysis"| GEMINI
+    GEMINI -->|"reads/writes<br/>findings"| LOG
+    LOG -->|"provides context<br/>across sessions"| GEMINI
+    
+    style ROOT fill:#e0e0e0,stroke:#424242,stroke-width:2px
+    style CN fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style GEMINI fill:#fff3e0,stroke:#f57c00,stroke-width:3px,color:#000
+    style LOG fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px,color:#000
+    style AGENTS fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    
+    style G7 fill:#f3e5f5,stroke:#6a1b9a
+    style G1 fill:#f3e5f5,stroke:#6a1b9a
+    style G3 fill:#f3e5f5,stroke:#6a1b9a
+    style G4 fill:#f3e5f5,stroke:#6a1b9a
+    style G2 fill:#f3e5f5,stroke:#6a1b9a
+    style G5 fill:#f3e5f5,stroke:#6a1b9a
+    style G6 fill:#f3e5f5,stroke:#6a1b9a
