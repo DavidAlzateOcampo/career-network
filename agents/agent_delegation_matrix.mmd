@@ -1,0 +1,39 @@
+graph TD
+    USER["👤 User Arrives<br/>with a need"]
+    
+    USER -->|"Need direction?<br/>Unsure about path?"| G7["🔭 Career Futurist<br/>@career-futurist<br/><br/>OUTPUT:<br/>• Blue Ocean opportunities<br/>• Market validation<br/>• Why your background matters<br/>• First steps"]
+    
+    USER -->|"Have target roles?<br/>Want gap analysis?"| G1["📊 Career Strategist<br/>@career-strategist<br/><br/>OUTPUT:<br/>• Technical blockers<br/>• Soft-skill gaps<br/>• Time estimates<br/>• Priority ranking"]
+    
+    USER -->|"Ready to learn?<br/>Need skill path?"| G3["🏋️ Learning Architect<br/>@learning-architect<br/><br/>OUTPUT:<br/>• 14-day sprint design<br/>• Problem sets<br/>• Daily structure<br/>• Visual explanations"]
+    
+    USER -->|"Want to test skills?<br/>Need pressure sim?"| G4["⚡ Tech Drill Sergeant<br/>@tech-drill-sergeant<br/><br/>OUTPUT:<br/>• Timed challenges<br/>• Pass/fail analysis<br/>• Failure diagnosis<br/>• Performance metrics"]
+    
+    USER -->|"Feeling stuck?<br/>Need motivation?"| G2["🧠 Psych Advisor<br/>@psych-advisor<br/><br/>OUTPUT:<br/>• 5-min reframes<br/>• Confidence rebuild<br/>• Momentum management<br/>• Resilience techniques"]
+    
+    USER -->|"Ready to apply?<br/>Need resume help?"| G5["📝 CV Specialist<br/>@cv-specialist<br/><br/>OUTPUT:<br/>• Rewritten resume<br/>• ATS optimization<br/>• 3 role-specific versions<br/>• Interview narratives"]
+    
+    USER -->|"Interviewing?<br/>Need case practice?"| G6["🏗️ Case Simulator<br/>@case-simulator<br/><br/>OUTPUT:<br/>• System design cases<br/>• Architecture feedback<br/>• Trade-off challenges<br/>• Interview readiness"]
+    
+    G7 -->|insights| ORCH["🎯 Orchestrator<br/>Synthesizes & Stores"]
+    G1 -->|insights| ORCH
+    G3 -->|insights| ORCH
+    G4 -->|insights| ORCH
+    G2 -->|insights| ORCH
+    G5 -->|insights| ORCH
+    G6 -->|insights| ORCH
+    
+    ORCH -->|key findings| LOG["📋 CAREER_LOG.md<br/>Persistent Storage"]
+    ORCH -->|next steps| USER
+    LOG -->|context| ORCH
+    
+    style USER fill:#e1f5ff
+    style G7 fill:#f3e5f5
+    style G1 fill:#f3e5f5
+    style G3 fill:#f3e5f5
+    style G4 fill:#f3e5f5
+    style G2 fill:#f3e5f5
+    style G5 fill:#f3e5f5
+    style G6 fill:#f3e5f5
+    style ORCH fill:#fff3e0
+    style LOG fill:#e8f5e9

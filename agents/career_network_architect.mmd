@@ -1,0 +1,98 @@
+graph TB
+    subgraph "User Interface"
+        USER["👤 User<br/>Career Pivot Journey"]
+    end
+    
+    subgraph "Orchestrator Hub"
+        GEMINI["🎯 GEMINI.md<br/>Central Orchestrator<br/><br/>• Listens to user input<br/>• Identifies needed agents<br/>• Delegates tasks<br/>• Synthesizes insights<br/>• Manages context<br/>• Maintains CAREER_LOG.md"]
+    end
+    
+    subgraph "Agent Network"
+        G7["🔭 Career Futurist<br/>@career-futurist<br/><br/>Blue Ocean Discovery<br/>• Emerging industries<br/>• Market validation<br/>• Opportunity analysis"]
+        
+        G1["📊 Career Strategist<br/>@career-strategist<br/><br/>Gap Analysis<br/>• Technical blockers<br/>• Role ranking<br/>• Priority mapping"]
+        
+        G3["🏋️ Learning Architect<br/>@learning-architect<br/><br/>Skill Building<br/>• 14-day sprints<br/>• Problem sets<br/>• Visual learning"]
+        
+        G4["⚡ Tech Drill Sergeant<br/>@tech-drill-sergeant<br/><br/>Pressure Testing<br/>• Timed challenges<br/>• Failure diagnosis<br/>• Performance tracking"]
+        
+        G2["🧠 Psych Advisor<br/>@psych-advisor<br/><br/>Resilience Support<br/>• Cognitive reframes<br/>• Momentum management<br/>• Confidence building"]
+        
+        G5["📝 CV Specialist<br/>@cv-specialist<br/><br/>Resume Optimization<br/>• Legacy translation<br/>• ATS optimization<br/>• Multi-version creation"]
+        
+        G6["🏗️ Case Simulator<br/>@case-simulator<br/><br/>Interview Prep<br/>• System design cases<br/>• Architecture challenges<br/>• Trade-off analysis"]
+    end
+    
+    subgraph "Persistent Storage"
+        LOG["📋 CAREER_LOG.md<br/><br/>Persistent Progress Tracking<br/>• Strategic direction<br/>• Gap analysis<br/>• Learning progress<br/>• Interview feedback<br/>• Resume versions<br/>• Resilience notes<br/>• Next actions"]
+    end
+    
+    subgraph "User Journey Phases"
+        P1["Phase 1: Discovery<br/>Need direction?<br/>→ @career-futurist"]
+        P2["Phase 2: Analysis<br/>Have targets?<br/>→ @career-strategist"]
+        P3["Phase 3: Building<br/>Ready to learn?<br/>→ @learning-architect<br/>+ @tech-drill-sergeant"]
+        P4["Phase 4: Support<br/>Struggling?<br/>→ @psych-advisor"]
+        P5["Phase 5: Positioning<br/>Applying soon?<br/>→ @cv-specialist"]
+        P6["Phase 6: Interviewing<br/>Interview prep?<br/>→ @case-simulator"]
+    end
+    
+    subgraph "Context Management"
+        CONTEXT["⚙️ Token Preservation<br/><br/>1. Summarization<br/>   Agent output → 2-3 bullets<br/><br/>2. Persistent Storage<br/>   Findings → CAREER_LOG.md<br/><br/>3. Session Compaction<br/>   Long chats → summarized restart<br/><br/>4. Selective Reading<br/>   Read log when needed"]
+    end
+    
+    %% User to Orchestrator
+    USER -->|Input, Questions,<br/>Progress Updates| GEMINI
+    GEMINI -->|Guidance, Next Steps,<br/>Key Insights| USER
+    
+    %% Orchestrator to Agents
+    GEMINI -->|"Delegate:<br/>@agent-name task"| G7
+    GEMINI -->|"Delegate:<br/>@agent-name task"| G1
+    GEMINI -->|"Delegate:<br/>@agent-name task"| G3
+    GEMINI -->|"Delegate:<br/>@agent-name task"| G4
+    GEMINI -->|"Delegate:<br/>@agent-name task"| G2
+    GEMINI -->|"Delegate:<br/>@agent-name task"| G5
+    GEMINI -->|"Delegate:<br/>@agent-name task"| G6
+    
+    %% Agents back to Orchestrator
+    G7 -->|Specialized Analysis| GEMINI
+    G1 -->|Specialized Analysis| GEMINI
+    G3 -->|Specialized Analysis| GEMINI
+    G4 -->|Specialized Analysis| GEMINI
+    G2 -->|Specialized Analysis| GEMINI
+    G5 -->|Specialized Analysis| GEMINI
+    G6 -->|Specialized Analysis| GEMINI
+    
+    %% Orchestrator to Log
+    GEMINI -->|"Save findings:<br/>• Opportunities<br/>• Gaps<br/>• Progress<br/>• Feedback"| LOG
+    LOG -->|"Read context:<br/>• Where we left off<br/>• Past findings<br/>• Progress trends"| GEMINI
+    
+    %% Journey Phases
+    P1 -.->|leads to| P2
+    P2 -.->|leads to| P3
+    P3 -.->|leads to| P4
+    P4 -.->|supports| P3
+    P3 -.->|leads to| P5
+    P5 -.->|leads to| P6
+    P4 -.->|supports| P5
+    P4 -.->|supports| P6
+    
+    %% Context Management
+    CONTEXT -->|Guides| GEMINI
+    
+    style USER fill:#e1f5ff
+    style GEMINI fill:#fff3e0
+    style G7 fill:#f3e5f5
+    style G1 fill:#f3e5f5
+    style G3 fill:#f3e5f5
+    style G4 fill:#f3e5f5
+    style G2 fill:#f3e5f5
+    style G5 fill:#f3e5f5
+    style G6 fill:#f3e5f5
+    style LOG fill:#e8f5e9
+    style P1 fill:#fce4ec
+    style P2 fill:#fce4ec
+    style P3 fill:#fce4ec
+    style P4 fill:#fce4ec
+    style P5 fill:#fce4ec
+    style P6 fill:#fce4ec
+    style CONTEXT fill:#e0f2f1
