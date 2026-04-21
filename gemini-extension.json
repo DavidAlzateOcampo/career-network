@@ -1,0 +1,10 @@
+{
+  "name": "career-network",
+  "version": "1.0.0",
+  "description": "A 7-agent network for professional career support (G0-G7).",
+  "author": "User",
+  "main": "GEMINI.md",
+  "engines": {
+    "gemini": ">=1.0.0"
+  }
+}
